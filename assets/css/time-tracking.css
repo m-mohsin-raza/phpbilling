@@ -1,0 +1,51 @@
+/* Time Tracking Specific Styles */
+.timer-display {
+  font-family: "Courier New", monospace;
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  color: var(--primary-color);
+}
+
+.timer-controls {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.timer-card {
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  color: white;
+  border: none;
+}
+
+.timer-card .card-body {
+  padding: 30px;
+}
+
+.time-entry {
+  font-family: "Courier New", monospace;
+  font-weight: 600;
+}
+
+.badge-running {
+  background-color: rgba(40, 167, 69, 0.15);
+  color: #28a745;
+  animation: pulse 2s infinite;
+}
+
+.badge-stopped {
+  background-color: rgba(220, 53, 69, 0.15);
+  color: #dc3545;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}

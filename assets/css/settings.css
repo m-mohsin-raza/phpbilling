@@ -1,0 +1,95 @@
+/* Settings Specific Styles */
+.settings-nav {
+  background: white;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.settings-nav .nav-link {
+  color: #6c757d;
+  padding: 10px 15px;
+  margin: 2px;
+  border-radius: 6px;
+  transition: all 0.2s;
+  transform: none;
+}
+
+.settings-nav .nav-link:hover,
+.settings-nav .nav-link.active {
+  color: var(--primary-color);
+  background-color: rgba(67, 97, 238, 0.1);
+  transform: none;
+}
+
+.settings-section {
+  display: none;
+}
+
+.settings-section.active {
+  display: block;
+}
+
+.form-section {
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #eee;
+}
+
+.form-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.section-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: var(--dark-color);
+}
+
+.logo-preview {
+  max-width: 200px;
+  max-height: 100px;
+  border: 2px dashed #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  background: #f8f9fa;
+}
+
+.color-picker-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.color-preview {
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+  border: 2px solid #ddd;
+  cursor: pointer;
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.notification-item {
+  padding: 15px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  background: white;
+}
+
+.backup-item {
+  display: flex;
+  justify-content: between;
+  align-items: center;
+  padding: 15px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  background: white;
+}
