@@ -39,7 +39,7 @@
             <div class="navbar-nav ms-auto">
                 <div class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                        <img src="assets/images/user-avatar.jpg" alt="User" class="user-avatar">
+                        <img src="assets/images/logo.jpg" alt="User" class="user-avatar">
                         <span class="d-none d-md-inline">Admin</span>
                     </a>
                     <ul class="dropdown-menu">
