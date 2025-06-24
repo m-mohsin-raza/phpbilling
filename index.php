@@ -18,61 +18,61 @@ include 'includes/header.php';
 
         <!-- Stats Cards -->
         <div class="row mb-4">
-            <div class="col-md-3">
-                <div class="card stats-card">
+            <div class="col-xl-3 col-md-6 mb-3">
+                <div class="card h-100">
                     <div class="card-body">
-                        <div class="d-flex justify-content-between">
+                        <div class="d-flex justify-content-between align-items-center">
                             <div>
-                                <h3 class="stats-value">$127,450</h3>
-                                <p class="stats-label">Total Revenue</p>
+                                <h6 class="text-uppercase text-muted mb-2">Total Revenue</h6>
+                                <h3 class="mb-0">$127,450</h3>
                             </div>
-                            <div class="stats-icon">
-                                <i class="bi bi-currency-dollar"></i>
+                            <div class="text-primary">
+                                <i class="bi bi-currency-dollar fs-2"></i>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
-                <div class="card stats-card">
+            <div class="col-xl-3 col-md-6 mb-3">
+                <div class="card h-100">
                     <div class="card-body">
-                        <div class="d-flex justify-content-between">
+                        <div class="d-flex justify-content-between align-items-center">
                             <div>
-                                <h3 class="stats-value">24</h3>
-                                <p class="stats-label">Active Projects</p>
+                                <h6 class="text-uppercase text-muted mb-2">Active Projects</h6>
+                                <h3 class="mb-0 text-success">24</h3>
                             </div>
-                            <div class="stats-icon">
-                                <i class="bi bi-folder"></i>
+                            <div class="text-success">
+                                <i class="bi bi-folder fs-2"></i>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
-                <div class="card stats-card">
+            <div class="col-xl-3 col-md-6 mb-3">
+                <div class="card h-100">
                     <div class="card-body">
-                        <div class="d-flex justify-content-between">
+                        <div class="d-flex justify-content-between align-items-center">
                             <div>
-                                <h3 class="stats-value">156</h3>
-                                <p class="stats-label">Total Clients</p>
+                                <h6 class="text-uppercase text-muted mb-2">Total Clients</h6>
+                                <h3 class="mb-0 text-info">156</h3>
                             </div>
-                            <div class="stats-icon">
-                                <i class="bi bi-people"></i>
+                            <div class="text-info">
+                                <i class="bi bi-people fs-2"></i>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
-                <div class="card stats-card">
+            <div class="col-xl-3 col-md-6 mb-3">
+                <div class="card h-100">
                     <div class="card-body">
-                        <div class="d-flex justify-content-between">
+                        <div class="d-flex justify-content-between align-items-center">
                             <div>
-                                <h3 class="stats-value">$8,750</h3>
-                                <p class="stats-label">Pending Invoices</p>
+                                <h6 class="text-uppercase text-muted mb-2">Pending Invoices</h6>
+                                <h3 class="mb-0 text-warning">$8,750</h3>
                             </div>
-                            <div class="stats-icon">
-                                <i class="bi bi-receipt"></i>
+                            <div class="text-warning">
+                                <i class="bi bi-receipt fs-2"></i>
                             </div>
                         </div>
                     </div>
@@ -88,8 +88,8 @@ include 'includes/header.php';
                         <h5>Revenue Trend</h5>
                     </div>
                     <div class="card-body">
-                        <div class="chart-container">
-                            <canvas id="revenueChart"></canvas>
+                        <div class="chart-container" style="position: relative; height:300px;">
+                            <canvas id="revenueChart" height="300"></canvas>
                         </div>
                     </div>
                 </div>
@@ -135,39 +135,68 @@ include 'includes/header.php';
 </div>
 
 <script>
-// Initialize dashboard charts
-$(document).ready(() => {
-    const revenueCtx = document.getElementById("revenueChart");
+// Ensure Chart.js is loaded before executing this code
+document.addEventListener('DOMContentLoaded', function() {
+    const revenueCtx = document.getElementById('revenueChart');
+    
     if (revenueCtx) {
-        new Chart(revenueCtx.getContext("2d"), {
-            type: "line",
-            data: {
-                labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct"],
-                datasets: [{
-                    label: "Revenue",
-                    data: [12000, 15000, 18000, 14000, 22000, 25000, 28000, 24000, 30000, 32000],
-                    borderColor: "#4361ee",
-                    backgroundColor: "rgba(67, 97, 238, 0.1)",
-                    tension: 0.4,
-                    fill: true,
-                }],
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: { display: false },
+        // Check if Chart is available
+        if (typeof Chart !== 'undefined') {
+            new Chart(revenueCtx, {
+                type: 'line',
+                data: {
+                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
+                    datasets: [{
+                        label: 'Revenue',
+                        data: [12000, 15000, 18000, 14000, 22000, 25000, 28000, 24000, 30000, 32000],
+                        borderColor: '#4361ee',
+                        backgroundColor: 'rgba(67, 97, 238, 0.1)',
+                        borderWidth: 2,
+                        tension: 0.4,
+                        fill: true,
+                        pointBackgroundColor: '#4361ee',
+                        pointRadius: 4,
+                        pointHoverRadius: 6
+                    }]
                 },
-                scales: {
-                    y: {
-                        beginAtZero: true,
-                        ticks: {
-                            callback: (value) => "$" + value.toLocaleString(),
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
                         },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return '$' + context.raw.toLocaleString();
+                                }
+                            }
+                        }
                     },
-                },
-            },
-        });
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                callback: function(value) {
+                                    return '$' + value.toLocaleString();
+                                }
+                            },
+                            grid: {
+                                drawBorder: false
+                            }
+                        },
+                        x: {
+                            grid: {
+                                display: false
+                            }
+                        }
+                    }
+                }
+            });
+        } else {
+            console.error('Chart.js is not loaded');
+        }
     }
 });
 </script>
