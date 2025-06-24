@@ -1,4 +1,4 @@
-// Main JavaScript functionality
+// Main JavaScript functionality - Pure JavaScript and jQuery only
 $(document).ready(() => {
   // Sidebar toggle functionality
   $("#sidebarToggle").click(() => {
@@ -6,11 +6,11 @@ $(document).ready(() => {
     $(".main-content").toggleClass("active")
   })
 
-  // Initialize tooltips
+  // Initialize Bootstrap tooltips
   var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
   var tooltipList = tooltipTriggerList.map((tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl))
 
-  // Initialize popovers
+  // Initialize Bootstrap popovers
   var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
   var popoverList = popoverTriggerList.map((popoverTriggerEl) => new bootstrap.Popover(popoverTriggerEl))
 
@@ -26,7 +26,7 @@ $(document).ready(() => {
 
   // Format currency inputs
   $(".currency-input").on("input", function () {
-    const value = $(this)
+    var value = $(this)
       .val()
       .replace(/[^\d.]/g, "")
     if (value) {
@@ -46,31 +46,34 @@ $(document).ready(() => {
 })
 
 // Common utility functions
-function formatCurrency(amount, currency = "USD") {
+function formatCurrency(amount, currency) {
+  currency = currency || "USD"
   return new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: currency,
   }).format(amount)
 }
 
-function formatDate(date, format = "MM/DD/YYYY") {
-  const d = new Date(date)
-  const month = String(d.getMonth() + 1).padStart(2, "0")
-  const day = String(d.getDate()).padStart(2, "0")
-  const year = d.getFullYear()
+function formatDate(date, format) {
+  format = format || "MM/DD/YYYY"
+  var d = new Date(date)
+  var month = String(d.getMonth() + 1).padStart(2, "0")
+  var day = String(d.getDate()).padStart(2, "0")
+  var year = d.getFullYear()
 
   switch (format) {
     case "DD/MM/YYYY":
-      return `${day}/${month}/${year}`
+      return day + "/" + month + "/" + year
     case "YYYY-MM-DD":
-      return `${year}-${month}-${day}`
+      return year + "-" + month + "-" + day
     default:
-      return `${month}/${day}/${year}`
+      return month + "/" + day + "/" + year
   }
 }
 
-function showNotification(message, type = "success") {
-  const alertClass =
+function showNotification(message, type) {
+  type = type || "success"
+  var alertClass =
     type === "success"
       ? "alert-success"
       : type === "error"
@@ -79,33 +82,36 @@ function showNotification(message, type = "success") {
           ? "alert-warning"
           : "alert-info"
 
-  const alert = $(`
-        <div class="alert ${alertClass} alert-dismissible fade show position-fixed" 
-             style="top: 80px; right: 20px; z-index: 9999; min-width: 300px;">
-            ${message}
-            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-        </div>
-    `)
+  var alert = $(
+    '<div class="alert ' +
+      alertClass +
+      ' alert-dismissible fade show position-fixed" style="top: 80px; right: 20px; z-index: 9999; min-width: 300px;">' +
+      message +
+      '<button type="button" class="btn-close" data-bs-dismiss="alert"></button>' +
+      "</div>",
+  )
 
   $("body").append(alert)
-  setTimeout(() => alert.fadeOut(), 5000)
+  setTimeout(() => {
+    alert.fadeOut()
+  }, 5000)
 }
 
 function validateEmail(email) {
-  const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+  var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
   return re.test(email)
 }
 
 function validatePhone(phone) {
-  const re = /^\+?[\d\s\-$$$$]+$/
+  var re = /^\+?[\d\s\-()]+$/
   return re.test(phone)
 }
 
 // Export functions for use in other files
 window.BixiTech = {
-  formatCurrency,
-  formatDate,
-  showNotification,
-  validateEmail,
-  validatePhone,
+  formatCurrency: formatCurrency,
+  formatDate: formatDate,
+  showNotification: showNotification,
+  validateEmail: validateEmail,
+  validatePhone: validatePhone,
 }

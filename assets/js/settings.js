@@ -1,49 +1,40 @@
-// Settings page functionality
+// Settings page functionality - Pure JavaScript and jQuery
 $(document).ready(() => {
   // Settings navigation
-  $("#settingsNav a").click(function (e) {
+  $("#settingsNav .nav-link, #settingsNav a").click(function (e) {
     e.preventDefault()
 
-    // Remove active class from all nav links and sections
-    $("#settingsNav a").removeClass("active")
+    $("#settingsNav .nav-link, #settingsNav a").removeClass("active")
     $(".settings-section").removeClass("active")
 
-    // Add active class to clicked nav link
     $(this).addClass("active")
 
-    // Show corresponding section
-    const section = $(this).data("section")
-    $("#" + section).addClass("active")
+    var sectionId = $(this).data("section")
+    $("#" + sectionId).addClass("active")
   })
 
   // Color picker functionality
-  $("#primaryColorPicker").change(function () {
-    const color = $(this).val()
-    $("#primaryColor").val(color)
-    $(".color-preview").first().css("background-color", color)
+  $(".color-preview").click(function () {
+    var colorInput = $(this).siblings('input[type="color"]')
+    colorInput.click()
   })
 
-  $("#secondaryColorPicker").change(function () {
-    const color = $(this).val()
-    $("#secondaryColor").val(color)
-    $(".color-preview").last().css("background-color", color)
+  $('input[type="color"]').change(function () {
+    var colorValue = $(this).val()
+    $(this).siblings(".color-preview").css("background-color", colorValue)
+    $(this).siblings('input[type="text"]').val(colorValue)
   })
 
   // Save all settings
   $("#saveAllSettings").click(() => {
-    // Here you would typically make an AJAX call to save all settings
-    if (typeof BixiTech !== "undefined") {
-      BixiTech.showNotification("Settings saved successfully!")
-    } else {
-      alert("Settings saved successfully!") // Fallback if BixiTech is not defined
-    }
+    showNotification("Settings saved successfully!")
   })
 
   // Logo upload preview
   $("#companyLogo").change((e) => {
-    const file = e.target.files[0]
+    var file = e.target.files[0]
     if (file) {
-      const reader = new FileReader()
+      var reader = new FileReader()
       reader.onload = (e) => {
         $(".logo-preview img").attr("src", e.target.result)
       }
@@ -51,3 +42,7 @@ $(document).ready(() => {
     }
   })
 })
+
+function showNotification(message) {
+  alert(message) // Replace with a more sophisticated notification system if needed
+}

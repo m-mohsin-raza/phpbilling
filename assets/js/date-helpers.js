@@ -37,4 +37,24 @@ $(document).ready(() => {
 
   // Initialize default dates
   setDefaultDates()
+
+  // Legacy date setters for backward compatibility
+  const today = new Date().toISOString().split("T")[0]
+  $("#taskDate").val(today)
+  $("#projectStartDate").val(today)
+  $("#estimateDate").val(today)
+
+  const validUntil = new Date()
+  validUntil.setDate(validUntil.getDate() + 30)
+  $("#estimateValidUntil").val(validUntil.toISOString().split("T")[0])
+
+  $("#invoiceDate").val(today)
+  const dueDate = new Date()
+  dueDate.setDate(dueDate.getDate() + 15)
+  $("#invoiceDueDate").val(dueDate.toISOString().split("T")[0])
+
+  $("#contractStartDate").val(today)
+  const endDate = new Date()
+  endDate.setMonth(endDate.getMonth() + 6)
+  $("#contractEndDate").val(endDate.toISOString().split("T")[0])
 })

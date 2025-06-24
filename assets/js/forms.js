@@ -1,9 +1,9 @@
-// Form handling and validation
+// Form handling and validation utilities - Pure JavaScript and jQuery
 $(document).ready(() => {
-  // Form validation
+  // Enhanced form validation
   $("form").on("submit", function (e) {
-    let isValid = true
-    const form = $(this)
+    var isValid = true
+    var form = $(this)
 
     // Clear previous validation states
     form.find(".is-invalid").removeClass("is-invalid")
@@ -11,8 +11,8 @@ $(document).ready(() => {
 
     // Validate required fields
     form.find("[required]").each(function () {
-      const field = $(this)
-      const value = field.val().trim()
+      var field = $(this)
+      var value = field.val().trim()
 
       if (!value) {
         field.addClass("is-invalid")
@@ -23,10 +23,10 @@ $(document).ready(() => {
 
     // Validate email fields
     form.find('input[type="email"]').each(function () {
-      const field = $(this)
-      const value = field.val().trim()
+      var field = $(this)
+      var value = field.val().trim()
 
-      if (value && !BixiTech.validateEmail(value)) {
+      if (value && !validateEmail(value)) {
         field.addClass("is-invalid")
         field.after('<div class="invalid-feedback">Please enter a valid email address.</div>')
         isValid = false
@@ -35,10 +35,10 @@ $(document).ready(() => {
 
     // Validate phone fields
     form.find('input[type="tel"]').each(function () {
-      const field = $(this)
-      const value = field.val().trim()
+      var field = $(this)
+      var value = field.val().trim()
 
-      if (value && !BixiTech.validatePhone(value)) {
+      if (value && !validatePhone(value)) {
         field.addClass("is-invalid")
         field.after('<div class="invalid-feedback">Please enter a valid phone number.</div>')
         isValid = false
@@ -47,42 +47,73 @@ $(document).ready(() => {
 
     if (!isValid) {
       e.preventDefault()
-      BixiTech.showNotification("Please correct the errors in the form.", "error")
+      showNotification("Please correct the errors in the form.", "error")
     }
   })
 
-  // Auto-save form data to localStorage
-  $("form[data-autosave]").each(function () {
-    const form = $(this)
-    const formId = form.attr("id") || "form_" + Math.random().toString(36).substr(2, 9)
+  // Auto-calculate totals in invoice/estimate forms
+  $(document).on("input", ".calculate-total", () => {
+    calculateFormTotal()
+  })
 
-    // Load saved data
-    const savedData = localStorage.getItem("form_" + formId)
-    if (savedData) {
-      const data = JSON.parse(savedData)
-      Object.keys(data).forEach((key) => {
-        const field = form.find(`[name="${key}"]`)
-        if (field.length) {
-          field.val(data[key])
-        }
-      })
-    }
+  // Add/remove item rows
+  $(document).on("click", ".add-item-row", () => {
+    addItemRow()
+  })
 
-    // Save data on change
-    form.on("change input", () => {
-      const formData = {}
-      form.find("input, select, textarea").each(function () {
-        const field = $(this)
-        if (field.attr("name")) {
-          formData[field.attr("name")] = field.val()
-        }
-      })
-      localStorage.setItem("form_" + formId, JSON.stringify(formData))
-    })
-
-    // Clear saved data on successful submit
-    form.on("submit", () => {
-      localStorage.removeItem("form_" + formId)
-    })
+  $(document).on("click", ".remove-item-row", function () {
+    $(this).closest("tr").remove()
+    calculateFormTotal()
   })
 })
+
+function calculateFormTotal() {
+  var subtotal = 0
+
+  $(".item-row").each(function () {
+    var qty = Number.parseFloat($(this).find(".qty-input").val()) || 0
+    var rate = Number.parseFloat($(this).find(".rate-input").val()) || 0
+    var amount = qty * rate
+
+    $(this)
+      .find(".amount-display")
+      .val("$" + amount.toFixed(2))
+    subtotal += amount
+  })
+
+  var taxRate = Number.parseFloat($(".tax-rate-input").val()) || 0
+  var tax = subtotal * (taxRate / 100)
+  var total = subtotal + tax
+
+  $(".subtotal-display").text("$" + subtotal.toFixed(2))
+  $(".tax-display").text("$" + tax.toFixed(2))
+  $(".total-display").text("$" + total.toFixed(2))
+}
+
+function addItemRow() {
+  var newRow =
+    '<tr class="item-row">' +
+    '<td><input type="text" class="form-control form-control-sm" placeholder="Item description"></td>' +
+    '<td><input type="number" class="form-control form-control-sm qty-input" value="1" min="0.25" step="0.25"></td>' +
+    '<td><input type="number" class="form-control form-control-sm rate-input" value="100" min="0" step="1"></td>' +
+    '<td><input type="text" class="form-control form-control-sm amount-display" value="$100.00" readonly></td>' +
+    '<td><button type="button" class="btn btn-sm btn-outline-danger remove-item-row"><i class="bi bi-trash"></i></button></td>' +
+    "</tr>"
+  $(".items-table tbody").append(newRow)
+  calculateFormTotal()
+}
+
+function validateEmail(email) {
+  var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+  return re.test(email)
+}
+
+function validatePhone(phone) {
+  var re = /^\d{10}$/ // Basic 10-digit phone number validation
+  return re.test(phone)
+}
+
+function showNotification(message, type) {
+  // Implement your notification logic here.  This is a placeholder.
+  alert(type.toUpperCase() + ": " + message)
+}

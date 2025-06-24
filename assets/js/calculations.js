@@ -92,4 +92,8 @@ $(document).ready(() => {
     calculateInvoiceTotal()
     calculateEstimateTotal()
   })
+
+  // Make functions globally available
+  window.calculateInvoiceTotal = calculateInvoiceTotal
+  window.calculateEstimateTotal = calculateEstimateTotal
 })
