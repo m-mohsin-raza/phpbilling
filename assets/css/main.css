@@ -60,6 +60,30 @@ body {
   font-size: 1.1rem;
 }
 
+/* Add this to your main CSS file or inside a <style> tag in projects.php */
+.tab-link {
+    color: #495057;
+    background: #f8f9fa;
+    border: 1px solid transparent;
+    border-bottom: none;
+    padding: 10px 20px;
+    margin-right: 2px;
+    font-weight: 500;
+    transition: background 0.2s, color 0.2s;
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.tab-link.active,
+.tab-link:focus,
+.tab-link:hover {
+    color: #0d6efd;
+    background: #fff;
+    border-color: #dee2e6 #dee2e6 #fff;
+    text-decoration: none;
+    outline: none;
+    font-weight: 600;
+}
+
 .sidebar-header {
   padding: 20px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -81,6 +105,7 @@ body {
 .nav-item {
   position: relative;
 }
+
 
 .nav-item .badge {
   position: absolute;
