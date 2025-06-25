@@ -358,59 +358,64 @@ include 'includes/header.php';
                                                     <table class="table table-hover data-table">
                                                         <thead>
                                                             <tr>
-                                                                <th>Task</th>
+                                                                <th>Date</th>
+                                                                <th>Task Details</th>
+                                                                <th>Hours</th>
+                                                                <th>Completed/WIP</th>
+                                                                <th>Clickup Link</th>
                                                                 <th>Assigned To</th>
-                                                                <th>Priority</th>
-                                                                <th>Due Date</th>
-                                                                <th>Status</th>
-                                                                <th>Progress</th>
+                                                                <th>Week No</th>
                                                                 <th>Actions</th>
                                                             </tr>
                                                         </thead>
                                                         <tbody>
                                                             <tr>
-                                                                <td><strong>API Integration</strong><br><small class="text-muted">Integrate payment system</small></td>
-                                                                <td><div class="d-flex align-items-center"><div class="client-avatar me-2">JD</div>John Doe</div></td>
-                                                                <td><span class="badge bg-danger">High</span></td>
                                                                 <td>2024-06-30</td>
-                                                                <td><span class="badge badge-pending">In Progress</span></td>
-                                                                <td><div class="progress" style="height: 6px;"><div class="progress-bar" style="width: 75%"></div></div><small class="text-muted">75%</small></td>
+                                                                <td>API Integration<br><small class="text-muted">Integrate payment system</small></td>
+                                                                <td>5</td>
+                                                                <td><span class="badge bg-warning">WIP</span></td>
+                                                                <td><a href="https://clickup.com/task/123" target="_blank">View</a></td>
+                                                                <td>John Doe</td>
+                                                                <td>26</td>
                                                                 <td>
                                                                     <button class="btn btn-sm btn-outline-primary" title="Edit"><i class="bi bi-pencil"></i></button>
                                                                     <button class="btn btn-sm btn-outline-danger" title="Delete"><i class="bi bi-trash"></i></button>
                                                                 </td>
                                                             </tr>
                                                             <tr>
-                                                                <td><strong>UI Redesign</strong><br><small class="text-muted">Update dashboard interface</small></td>
-                                                                <td><div class="d-flex align-items-center"><div class="client-avatar me-2">SM</div>Sarah Miller</div></td>
-                                                                <td><span class="badge bg-warning">Medium</span></td>
-                                                                <td>2024-07-05</td>
-                                                                <td><span class="badge badge-pending">Pending</span></td>
-                                                                <td><div class="progress" style="height: 6px;"><div class="progress-bar" style="width: 10%"></div></div><small class="text-muted">10%</small></td>
+                                                                <td>2024-07-01</td>
+                                                                <td>UI Redesign<br><small class="text-muted">Update dashboard interface</small></td>
+                                                                <td>3</td>
+                                                                <td><span class="badge bg-success">Completed</span></td>
+                                                                <td><a href="https://clickup.com/task/124" target="_blank">View</a></td>
+                                                                <td>Sarah Miller</td>
+                                                                <td>27</td>
                                                                 <td>
                                                                     <button class="btn btn-sm btn-outline-primary" title="Edit"><i class="bi bi-pencil"></i></button>
                                                                     <button class="btn btn-sm btn-outline-danger" title="Delete"><i class="bi bi-trash"></i></button>
                                                                 </td>
                                                             </tr>
                                                             <tr>
-                                                                <td><strong>Database Migration</strong><br><small class="text-muted">Move to new DB server</small></td>
-                                                                <td><div class="d-flex align-items-center"><div class="client-avatar me-2">MJ</div>Mike Johnson</div></td>
-                                                                <td><span class="badge bg-success">Low</span></td>
-                                                                <td>2024-06-28</td>
-                                                                <td><span class="badge badge-completed">Completed</span></td>
-                                                                <td><div class="progress" style="height: 6px;"><div class="progress-bar bg-success" style="width: 100%"></div></div><small class="text-muted">100%</small></td>
+                                                                <td>2024-07-02</td>
+                                                                <td>Database Migration<br><small class="text-muted">Move to new DB server</small></td>
+                                                                <td>2</td>
+                                                                <td><span class="badge bg-success">Completed</span></td>
+                                                                <td><a href="https://clickup.com/task/125" target="_blank">View</a></td>
+                                                                <td>Mike Johnson</td>
+                                                                <td>27</td>
                                                                 <td>
                                                                     <button class="btn btn-sm btn-outline-primary" title="Edit"><i class="bi bi-pencil"></i></button>
                                                                     <button class="btn btn-sm btn-outline-danger" title="Delete"><i class="bi bi-trash"></i></button>
                                                                 </td>
                                                             </tr>
                                                             <tr>
-                                                                <td><strong>Security Audit</strong><br><small class="text-muted">Conduct penetration testing</small></td>
-                                                                <td><div class="d-flex align-items-center"><div class="client-avatar me-2">JD</div>John Doe</div></td>
-                                                                <td><span class="badge bg-danger">High</span></td>
-                                                                <td>2024-07-15</td>
-                                                                <td><span class="badge badge-onhold">On Hold</span></td>
-                                                                <td><div class="progress" style="height: 6px;"><div class="progress-bar" style="width: 30%"></div></div><small class="text-muted">30%</small></td>
+                                                                <td>2024-07-03</td>
+                                                                <td>Security Audit<br><small class="text-muted">Conduct penetration testing</small></td>
+                                                                <td>4</td>
+                                                                <td><span class="badge bg-warning">WIP</span></td>
+                                                                <td><a href="https://clickup.com/task/126" target="_blank">View</a></td>
+                                                                <td>John Doe</td>
+                                                                <td>27</td>
                                                                 <td>
                                                                     <button class="btn btn-sm btn-outline-primary" title="Edit"><i class="bi bi-pencil"></i></button>
                                                                     <button class="btn btn-sm btn-outline-danger" title="Delete"><i class="bi bi-trash"></i></button>
@@ -466,59 +471,64 @@ include 'includes/header.php';
                                                     <table class="table table-hover data-table">
                                                         <thead>
                                                             <tr>
-                                                                <th>Task</th>
+                                                                <th>Date</th>
+                                                                <th>Task Details</th>
+                                                                <th>Hours</th>
+                                                                <th>Completed/WIP</th>
+                                                                <th>Clickup Link</th>
                                                                 <th>Assigned To</th>
-                                                                <th>Priority</th>
-                                                                <th>Due Date</th>
-                                                                <th>Status</th>
-                                                                <th>Progress</th>
+                                                                <th>Week No</th>
                                                                 <th>Actions</th>
                                                             </tr>
                                                         </thead>
                                                         <tbody>
                                                             <tr>
-                                                                <td><strong>Mobile App Development</strong><br><small class="text-muted">Build iOS version</small></td>
-                                                                <td><div class="d-flex align-items-center"><div class="client-avatar me-2">SM</div>Sarah Miller</div></td>
-                                                                <td><span class="badge bg-danger">High</span></td>
                                                                 <td>2024-07-10</td>
-                                                                <td><span class="badge badge-pending">In Progress</span></td>
-                                                                <td><div class="progress" style="height: 6px;"><div class="progress-bar" style="width: 45%"></div></div><small class="text-muted">45%</small></td>
+                                                                <td>Mobile App Development<br><small class="text-muted">Build iOS version</small></td>
+                                                                <td>6</td>
+                                                                <td><span class="badge bg-warning">WIP</span></td>
+                                                                <td><a href="https://clickup.com/task/223" target="_blank">View</a></td>
+                                                                <td>Sarah Miller</td>
+                                                                <td>28</td>
                                                                 <td>
                                                                     <button class="btn btn-sm btn-outline-primary" title="Edit"><i class="bi bi-pencil"></i></button>
                                                                     <button class="btn btn-sm btn-outline-danger" title="Delete"><i class="bi bi-trash"></i></button>
                                                                 </td>
                                                             </tr>
                                                             <tr>
-                                                                <td><strong>API Documentation</strong><br><small class="text-muted">Write developer docs</small></td>
-                                                                <td><div class="d-flex align-items-center"><div class="client-avatar me-2">JD</div>John Doe</div></td>
-                                                                <td><span class="badge bg-warning">Medium</span></td>
-                                                                <td>2024-07-03</td>
-                                                                <td><span class="badge badge-pending">Pending</span></td>
-                                                                <td><div class="progress" style="height: 6px;"><div class="progress-bar" style="width: 5%"></div></div><small class="text-muted">5%</small></td>
+                                                                <td>2024-07-11</td>
+                                                                <td>API Documentation<br><small class="text-muted">Write developer docs</small></td>
+                                                                <td>2</td>
+                                                                <td><span class="badge bg-success">Completed</span></td>
+                                                                <td><a href="https://clickup.com/task/224" target="_blank">View</a></td>
+                                                                <td>John Doe</td>
+                                                                <td>28</td>
                                                                 <td>
                                                                     <button class="btn btn-sm btn-outline-primary" title="Edit"><i class="bi bi-pencil"></i></button>
                                                                     <button class="btn btn-sm btn-outline-danger" title="Delete"><i class="bi bi-trash"></i></button>
                                                                 </td>
                                                             </tr>
                                                             <tr>
-                                                                <td><strong>User Testing</strong><br><small class="text-muted">Conduct beta testing</small></td>
-                                                                <td><div class="d-flex align-items-center"><div class="client-avatar me-2">MJ</div>Mike Johnson</div></td>
-                                                                <td><span class="badge bg-success">Low</span></td>
-                                                                <td>2024-06-25</td>
-                                                                <td><span class="badge badge-completed">Completed</span></td>
-                                                                <td><div class="progress" style="height: 6px;"><div class="progress-bar bg-success" style="width: 100%"></div></div><small class="text-muted">100%</small></td>
+                                                                <td>2024-07-12</td>
+                                                                <td>User Testing<br><small class="text-muted">Conduct beta testing</small></td>
+                                                                <td>3</td>
+                                                                <td><span class="badge bg-success">Completed</span></td>
+                                                                <td><a href="https://clickup.com/task/225" target="_blank">View</a></td>
+                                                                <td>Mike Johnson</td>
+                                                                <td>28</td>
                                                                 <td>
                                                                     <button class="btn btn-sm btn-outline-primary" title="Edit"><i class="bi bi-pencil"></i></button>
                                                                     <button class="btn btn-sm btn-outline-danger" title="Delete"><i class="bi bi-trash"></i></button>
                                                                 </td>
                                                             </tr>
                                                             <tr>
-                                                                <td><strong>Performance Optimization</strong><br><small class="text-muted">Improve load times</small></td>
-                                                                <td><div class="d-flex align-items-center"><div class="client-avatar me-2">SM</div>Sarah Miller</div></td>
-                                                                <td><span class="badge bg-warning">Medium</span></td>
-                                                                <td>2024-07-18</td>
-                                                                <td><span class="badge badge-pending">In Progress</span></td>
-                                                                <td><div class="progress" style="height: 6px;"><div class="progress-bar" style="width: 60%"></div></div><small class="text-muted">60%</small></td>
+                                                                <td>2024-07-13</td>
+                                                                <td>Performance Optimization<br><small class="text-muted">Improve load times</small></td>
+                                                                <td>4</td>
+                                                                <td><span class="badge bg-warning">WIP</span></td>
+                                                                <td><a href="https://clickup.com/task/226" target="_blank">View</a></td>
+                                                                <td>Sarah Miller</td>
+                                                                <td>28</td>
                                                                 <td>
                                                                     <button class="btn btn-sm btn-outline-primary" title="Edit"><i class="bi bi-pencil"></i></button>
                                                                     <button class="btn btn-sm btn-outline-danger" title="Delete"><i class="bi bi-trash"></i></button>
@@ -574,59 +584,64 @@ include 'includes/header.php';
                                                     <table class="table table-hover data-table">
                                                         <thead>
                                                             <tr>
-                                                                <th>Task</th>
+                                                                <th>Date</th>
+                                                                <th>Task Details</th>
+                                                                <th>Hours</th>
+                                                                <th>Completed/WIP</th>
+                                                                <th>Clickup Link</th>
                                                                 <th>Assigned To</th>
-                                                                <th>Priority</th>
-                                                                <th>Due Date</th>
-                                                                <th>Status</th>
-                                                                <th>Progress</th>
+                                                                <th>Week No</th>
                                                                 <th>Actions</th>
                                                             </tr>
                                                         </thead>
                                                         <tbody>
                                                             <tr>
-                                                                <td><strong>E-commerce Integration</strong><br><small class="text-muted">Add shopping cart</small></td>
-                                                                <td><div class="d-flex align-items-center"><div class="client-avatar me-2">MJ</div>Mike Johnson</div></td>
-                                                                <td><span class="badge bg-danger">High</span></td>
                                                                 <td>2024-07-12</td>
-                                                                <td><span class="badge badge-pending">In Progress</span></td>
-                                                                <td><div class="progress" style="height: 6px;"><div class="progress-bar" style="width: 35%"></div></div><small class="text-muted">35%</small></td>
+                                                                <td>E-commerce Integration<br><small class="text-muted">Add shopping cart</small></td>
+                                                                <td>7</td>
+                                                                <td><span class="badge bg-warning">WIP</span></td>
+                                                                <td><a href="https://clickup.com/task/323" target="_blank">View</a></td>
+                                                                <td>Mike Johnson</td>
+                                                                <td>28</td>
                                                                 <td>
                                                                     <button class="btn btn-sm btn-outline-primary" title="Edit"><i class="bi bi-pencil"></i></button>
                                                                     <button class="btn btn-sm btn-outline-danger" title="Delete"><i class="bi bi-trash"></i></button>
                                                                 </td>
                                                             </tr>
                                                             <tr>
-                                                                <td><strong>Payment Gateway Setup</strong><br><small class="text-muted">Configure Stripe API</small></td>
-                                                                <td><div class="d-flex align-items-center"><div class="client-avatar me-2">JD</div>John Doe</div></td>
-                                                                <td><span class="badge bg-danger">High</span></td>
-                                                                <td>2024-07-08</td>
-                                                                <td><span class="badge badge-pending">In Progress</span></td>
-                                                                <td><div class="progress" style="height: 6px;"><div class="progress-bar" style="width: 80%"></div></div><small class="text-muted">80%</small></td>
+                                                                <td>2024-07-13</td>
+                                                                <td>Payment Gateway Setup<br><small class="text-muted">Configure Stripe API</small></td>
+                                                                <td>3</td>
+                                                                <td><span class="badge bg-success">Completed</span></td>
+                                                                <td><a href="https://clickup.com/task/324" target="_blank">View</a></td>
+                                                                <td>John Doe</td>
+                                                                <td>28</td>
                                                                 <td>
                                                                     <button class="btn btn-sm btn-outline-primary" title="Edit"><i class="bi bi-pencil"></i></button>
                                                                     <button class="btn btn-sm btn-outline-danger" title="Delete"><i class="bi bi-trash"></i></button>
                                                                 </td>
                                                             </tr>
                                                             <tr>
-                                                                <td><strong>Inventory Management</strong><br><small class="text-muted">Build stock tracking</small></td>
-                                                                <td><div class="d-flex align-items-center"><div class="client-avatar me-2">SM</div>Sarah Miller</div></td>
-                                                                <td><span class="badge bg-warning">Medium</span></td>
-                                                                <td>2024-07-20</td>
-                                                                <td><span class="badge badge-pending">Pending</span></td>
-                                                                <td><div class="progress" style="height: 6px;"><div class="progress-bar" style="width: 0%"></div></div><small class="text-muted">0%</small></td>
+                                                                <td>2024-07-14</td>
+                                                                <td>Inventory Management<br><small class="text-muted">Build stock tracking</small></td>
+                                                                <td>2</td>
+                                                                <td><span class="badge bg-success">Completed</span></td>
+                                                                <td><a href="https://clickup.com/task/325" target="_blank">View</a></td>
+                                                                <td>Sarah Miller</td>
+                                                                <td>28</td>
                                                                 <td>
                                                                     <button class="btn btn-sm btn-outline-primary" title="Edit"><i class="bi bi-pencil"></i></button>
                                                                     <button class="btn btn-sm btn-outline-danger" title="Delete"><i class="bi bi-trash"></i></button>
                                                                 </td>
                                                             </tr>
                                                             <tr>
-                                                                <td><strong>Customer Portal</strong><br><small class="text-muted">Design account dashboard</small></td>
-                                                                <td><div class="d-flex align-items-center"><div class="client-avatar me-2">SM</div>Sarah Miller</div></td>
-                                                                <td><span class="badge bg-success">Low</span></td>
-                                                                <td>2024-06-29</td>
-                                                                <td><span class="badge badge-completed">Completed</span></td>
-                                                                <td><div class="progress" style="height: 6px;"><div class="progress-bar bg-success" style="width: 100%"></div></div><small class="text-muted">100%</small></td>
+                                                                <td>2024-07-15</td>
+                                                                <td>Customer Portal<br><small class="text-muted">Design account dashboard</small></td>
+                                                                <td>5</td>
+                                                                <td><span class="badge bg-warning">WIP</span></td>
+                                                                <td><a href="https://clickup.com/task/326" target="_blank">View</a></td>
+                                                                <td>Sarah Miller</td>
+                                                                <td>29</td>
                                                                 <td>
                                                                     <button class="btn btn-sm btn-outline-primary" title="Edit"><i class="bi bi-pencil"></i></button>
                                                                     <button class="btn btn-sm btn-outline-danger" title="Delete"><i class="bi bi-trash"></i></button>
@@ -682,59 +697,64 @@ include 'includes/header.php';
                                                     <table class="table table-hover data-table">
                                                         <thead>
                                                             <tr>
-                                                                <th>Task</th>
+                                                                <th>Date</th>
+                                                                <th>Task Details</th>
+                                                                <th>Hours</th>
+                                                                <th>Completed/WIP</th>
+                                                                <th>Clickup Link</th>
                                                                 <th>Assigned To</th>
-                                                                <th>Priority</th>
-                                                                <th>Due Date</th>
-                                                                <th>Status</th>
-                                                                <th>Progress</th>
+                                                                <th>Week No</th>
                                                                 <th>Actions</th>
                                                             </tr>
                                                         </thead>
                                                         <tbody>
                                                             <tr>
-                                                                <td><strong>Data Migration</strong><br><small class="text-muted">Transfer legacy data</small></td>
-                                                                <td><div class="d-flex align-items-center"><div class="client-avatar me-2">JD</div>John Doe</div></td>
-                                                                <td><span class="badge bg-danger">High</span></td>
                                                                 <td>2024-07-05</td>
-                                                                <td><span class="badge badge-pending">In Progress</span></td>
-                                                                <td><div class="progress" style="height: 6px;"><div class="progress-bar" style="width: 65%"></div></div><small class="text-muted">65%</small></td>
+                                                                <td>Data Migration<br><small class="text-muted">Transfer legacy data</small></td>
+                                                                <td>8</td>
+                                                                <td><span class="badge bg-warning">WIP</span></td>
+                                                                <td><a href="https://clickup.com/task/423" target="_blank">View</a></td>
+                                                                <td>John Doe</td>
+                                                                <td>28</td>
                                                                 <td>
                                                                     <button class="btn btn-sm btn-outline-primary" title="Edit"><i class="bi bi-pencil"></i></button>
                                                                     <button class="btn btn-sm btn-outline-danger" title="Delete"><i class="bi bi-trash"></i></button>
                                                                 </td>
                                                             </tr>
                                                             <tr>
-                                                                <td><strong>Analytics Dashboard</strong><br><small class="text-muted">Build reporting tools</small></td>
-                                                                <td><div class="d-flex align-items-center"><div class="client-avatar me-2">MJ</div>Mike Johnson</div></td>
-                                                                <td><span class="badge bg-warning">Medium</span></td>
-                                                                <td>2024-07-15</td>
-                                                                <td><span class="badge badge-pending">Pending</span></td>
-                                                                <td><div class="progress" style="height: 6px;"><div class="progress-bar" style="width: 15%"></div></div><small class="text-muted">15%</small></td>
+                                                                <td>2024-07-06</td>
+                                                                <td>Analytics Dashboard<br><small class="text-muted">Build reporting tools</small></td>
+                                                                <td>6</td>
+                                                                <td><span class="badge bg-success">Completed</span></td>
+                                                                <td><a href="https://clickup.com/task/424" target="_blank">View</a></td>
+                                                                <td>Mike Johnson</td>
+                                                                <td>28</td>
                                                                 <td>
                                                                     <button class="btn btn-sm btn-outline-primary" title="Edit"><i class="bi bi-pencil"></i></button>
                                                                     <button class="btn btn-sm btn-outline-danger" title="Delete"><i class="bi bi-trash"></i></button>
                                                                 </td>
                                                             </tr>
                                                             <tr>
-                                                                <td><strong>Database Optimization</strong><br><small class="text-muted">Improve query performance</small></td>
-                                                                <td><div class="d-flex align-items-center"><div class="client-avatar me-2">JD</div>John Doe</div></td>
-                                                                <td><span class="badge bg-success">Low</span></td>
-                                                                <td>2024-06-27</td>
-                                                                <td><span class="badge badge-completed">Completed</span></td>
-                                                                <td><div class="progress" style="height: 6px;"><div class="progress-bar bg-success" style="width: 100%"></div></div><small class="text-muted">100%</small></td>
+                                                                <td>2024-07-07</td>
+                                                                <td>Database Optimization<br><small class="text-muted">Improve query performance</small></td>
+                                                                <td>4</td>
+                                                                <td><span class="badge bg-success">Completed</span></td>
+                                                                <td><a href="https://clickup.com/task/425" target="_blank">View</a></td>
+                                                                <td>John Doe</td>
+                                                                <td>28</td>
                                                                 <td>
                                                                     <button class="btn btn-sm btn-outline-primary" title="Edit"><i class="bi bi-pencil"></i></button>
                                                                     <button class="btn btn-sm btn-outline-danger" title="Delete"><i class="bi bi-trash"></i></button>
                                                                 </td>
                                                             </tr>
                                                             <tr>
-                                                                <td><strong>Backup System</strong><br><small class="text-muted">Implement automated backups</small></td>
-                                                                <td><div class="d-flex align-items-center"><div class="client-avatar me-2">MJ</div>Mike Johnson</div></td>
-                                                                <td><span class="badge bg-warning">Medium</span></td>
-                                                                <td>2024-07-22</td>
-                                                                <td><span class="badge badge-pending">In Progress</span></td>
-                                                                <td><div class="progress" style="height: 6px;"><div class="progress-bar" style="width: 40%"></div></div><small class="text-muted">40%</small></td>
+                                                                <td>2024-07-08</td>
+                                                                <td>Backup System<br><small class="text-muted">Implement automated backups</small></td>
+                                                                <td>5</td>
+                                                                <td><span class="badge bg-warning">WIP</span></td>
+                                                                <td><a href="https://clickup.com/task/426" target="_blank">View</a></td>
+                                                                <td>Mike Johnson</td>
+                                                                <td>28</td>
                                                                 <td>
                                                                     <button class="btn btn-sm btn-outline-primary" title="Edit"><i class="bi bi-pencil"></i></button>
                                                                     <button class="btn btn-sm btn-outline-danger" title="Delete"><i class="bi bi-trash"></i></button>
@@ -790,59 +810,64 @@ include 'includes/header.php';
                                                     <table class="table table-hover data-table">
                                                         <thead>
                                                             <tr>
-                                                                <th>Task</th>
+                                                                <th>Date</th>
+                                                                <th>Task Details</th>
+                                                                <th>Hours</th>
+                                                                <th>Completed/WIP</th>
+                                                                <th>Clickup Link</th>
                                                                 <th>Assigned To</th>
-                                                                <th>Priority</th>
-                                                                <th>Due Date</th>
-                                                                <th>Status</th>
-                                                                <th>Progress</th>
+                                                                <th>Week No</th>
                                                                 <th>Actions</th>
                                                             </tr>
                                                         </thead>
                                                         <tbody>
                                                             <tr>
-                                                                <td><strong>Frontend Revamp</strong><br><small class="text-muted">Redesign main pages</small></td>
-                                                                <td><div class="d-flex align-items-center"><div class="client-avatar me-2">SM</div>Sarah Miller</div></td>
-                                                                <td><span class="badge bg-danger">High</span></td>
                                                                 <td>2024-07-07</td>
-                                                                <td><span class="badge badge-pending">In Progress</span></td>
-                                                                <td><div class="progress" style="height: 6px;"><div class="progress-bar" style="width: 55%"></div></div><small class="text-muted">55%</small></td>
+                                                                <td>Frontend Revamp<br><small class="text-muted">Redesign main pages</small></td>
+                                                                <td>7</td>
+                                                                <td><span class="badge bg-warning">WIP</span></td>
+                                                                <td><a href="https://clickup.com/task/523" target="_blank">View</a></td>
+                                                                <td>Sarah Miller</td>
+                                                                <td>28</td>
                                                                 <td>
                                                                     <button class="btn btn-sm btn-outline-primary" title="Edit"><i class="bi bi-pencil"></i></button>
                                                                     <button class="btn btn-sm btn-outline-danger" title="Delete"><i class="bi bi-trash"></i></button>
                                                                 </td>
                                                             </tr>
                                                             <tr>
-                                                                <td><strong>Content Management</strong><br><small class="text-muted">Implement CMS</small></td>
-                                                                <td><div class="d-flex align-items-center"><div class="client-avatar me-2">JD</div>John Doe</div></td>
-                                                                <td><span class="badge bg-warning">Medium</span></td>
-                                                                <td>2024-07-14</td>
-                                                                <td><span class="badge badge-pending">Pending</span></td>
-                                                                <td><div class="progress" style="height: 6px;"><div class="progress-bar" style="width: 20%"></div></div><small class="text-muted">20%</small></td>
+                                                                <td>2024-07-08</td>
+                                                                <td>Content Management<br><small class="text-muted">Implement CMS</small></td>
+                                                                <td>4</td>
+                                                                <td><span class="badge bg-success">Completed</span></td>
+                                                                <td><a href="https://clickup.com/task/524" target="_blank">View</a></td>
+                                                                <td>John Doe</td>
+                                                                <td>28</td>
                                                                 <td>
                                                                     <button class="btn btn-sm btn-outline-primary" title="Edit"><i class="bi bi-pencil"></i></button>
                                                                     <button class="btn btn-sm btn-outline-danger" title="Delete"><i class="bi bi-trash"></i></button>
                                                                 </td>
                                                             </tr>
                                                             <tr>
-                                                                <td><strong>SEO Optimization</strong><br><small class="text-muted">Improve search rankings</small></td>
-                                                                <td><div class="d-flex align-items-center"><div class="client-avatar me-2">SM</div>Sarah Miller</div></td>
-                                                                <td><span class="badge bg-success">Low</span></td>
-                                                                <td>2024-06-30</td>
-                                                                <td><span class="badge badge-completed">Completed</span></td>
-                                                                <td><div class="progress" style="height: 6px;"><div class="progress-bar bg-success" style="width: 100%"></div></div><small class="text-muted">100%</small></td>
+                                                                <td>2024-07-09</td>
+                                                                <td>SEO Optimization<br><small class="text-muted">Improve search rankings</small></td>
+                                                                <td>3</td>
+                                                                <td><span class="badge bg-success">Completed</span></td>
+                                                                <td><a href="https://clickup.com/task/525" target="_blank">View</a></td>
+                                                                <td>Sarah Miller</td>
+                                                                <td>28</td>
                                                                 <td>
                                                                     <button class="btn btn-sm btn-outline-primary" title="Edit"><i class="bi bi-pencil"></i></button>
                                                                     <button class="btn btn-sm btn-outline-danger" title="Delete"><i class="bi bi-trash"></i></button>
                                                                 </td>
                                                             </tr>
                                                             <tr>
-                                                                <td><strong>Multilingual Support</strong><br><small class="text-muted">Add language switcher</small></td>
-                                                                <td><div class="d-flex align-items-center"><div class="client-avatar me-2">MJ</div>Mike Johnson</div></td>
-                                                                <td><span class="badge bg-warning">Medium</span></td>
-                                                                <td>2024-07-25</td>
-                                                                <td><span class="badge badge-pending">In Progress</span></td>
-                                                                <td><div class="progress" style="height: 6px;"><div class="progress-bar" style="width: 25%"></div></div><small class="text-muted">25%</small></td>
+                                                                <td>2024-07-10</td>
+                                                                <td>Multilingual Support<br><small class="text-muted">Add language switcher</small></td>
+                                                                <td>2</td>
+                                                                <td><span class="badge bg-warning">WIP</span></td>
+                                                                <td><a href="https://clickup.com/task/526" target="_blank">View</a></td>
+                                                                <td>Mike Johnson</td>
+                                                                <td>28</td>
                                                                 <td>
                                                                     <button class="btn btn-sm btn-outline-primary" title="Edit"><i class="bi bi-pencil"></i></button>
                                                                     <button class="btn btn-sm btn-outline-danger" title="Delete"><i class="bi bi-trash"></i></button>
@@ -898,59 +923,64 @@ include 'includes/header.php';
                                                     <table class="table table-hover data-table">
                                                         <thead>
                                                             <tr>
-                                                                <th>Task</th>
+                                                                <th>Date</th>
+                                                                <th>Task Details</th>
+                                                                <th>Hours</th>
+                                                                <th>Completed/WIP</th>
+                                                                <th>Clickup Link</th>
                                                                 <th>Assigned To</th>
-                                                                <th>Priority</th>
-                                                                <th>Due Date</th>
-                                                                <th>Status</th>
-                                                                <th>Progress</th>
+                                                                <th>Week No</th>
                                                                 <th>Actions</th>
                                                             </tr>
                                                         </thead>
                                                         <tbody>
                                                             <tr>
-                                                                <td><strong>Research Phase</strong><br><small class="text-muted">Market analysis</small></td>
-                                                                <td><div class="d-flex align-items-center"><div class="client-avatar me-2">MJ</div>Mike Johnson</div></td>
-                                                                <td><span class="badge bg-danger">High</span></td>
                                                                 <td>2024-07-09</td>
-                                                                <td><span class="badge badge-pending">In Progress</span></td>
-                                                                <td><div class="progress" style="height: 6px;"><div class="progress-bar" style="width: 70%"></div></div><small class="text-muted">70%</small></td>
+                                                                <td>Research Phase<br><small class="text-muted">Market analysis</small></td>
+                                                                <td>6</td>
+                                                                <td><span class="badge bg-warning">WIP</span></td>
+                                                                <td><a href="https://clickup.com/task/623" target="_blank">View</a></td>
+                                                                <td>Mike Johnson</td>
+                                                                <td>28</td>
                                                                 <td>
                                                                     <button class="btn btn-sm btn-outline-primary" title="Edit"><i class="bi bi-pencil"></i></button>
                                                                     <button class="btn btn-sm btn-outline-danger" title="Delete"><i class="bi bi-trash"></i></button>
                                                                 </td>
                                                             </tr>
                                                             <tr>
-                                                                <td><strong>Prototype Design</strong><br><small class="text-muted">Create wireframes</small></td>
-                                                                <td><div class="d-flex align-items-center"><div class="client-avatar me-2">SM</div>Sarah Miller</div></td>
-                                                                <td><span class="badge bg-warning">Medium</span></td>
-                                                                <td>2024-07-16</td>
-                                                                <td><span class="badge badge-pending">Pending</span></td>
-                                                                <td><div class="progress" style="height: 6px;"><div class="progress-bar" style="width: 5%"></div></div><small class="text-muted">5%</small></td>
+                                                                <td>2024-07-10</td>
+                                                                <td>Prototype Design<br><small class="text-muted">Create wireframes</small></td>
+                                                                <td>3</td>
+                                                                <td><span class="badge bg-success">Completed</span></td>
+                                                                <td><a href="https://clickup.com/task/624" target="_blank">View</a></td>
+                                                                <td>Sarah Miller</td>
+                                                                <td>28</td>
                                                                 <td>
                                                                     <button class="btn btn-sm btn-outline-primary" title="Edit"><i class="bi bi-pencil"></i></button>
                                                                     <button class="btn btn-sm btn-outline-danger" title="Delete"><i class="bi bi-trash"></i></button>
                                                                 </td>
                                                             </tr>
                                                             <tr>
-                                                                <td><strong>Requirements Gathering</strong><br><small class="text-muted">Client interviews</small></td>
-                                                                <td><div class="d-flex align-items-center"><div class="client-avatar me-2">JD</div>John Doe</div></td>
-                                                                <td><span class="badge bg-success">Low</span></td>
-                                                                <td>2024-06-26</td>
-                                                                <td><span class="badge badge-completed">Completed</span></td>
-                                                                <td><div class="progress" style="height: 6px;"><div class="progress-bar bg-success" style="width: 100%"></div></div><small class="text-muted">100%</small></td>
+                                                                <td>2024-07-11</td>
+                                                                <td>Requirements Gathering<br><small class="text-muted">Client interviews</small></td>
+                                                                <td>2</td>
+                                                                <td><span class="badge bg-success">Completed</span></td>
+                                                                <td><a href="https://clickup.com/task/625" target="_blank">View</a></td>
+                                                                <td>John Doe</td>
+                                                                <td>28</td>
                                                                 <td>
                                                                     <button class="btn btn-sm btn-outline-primary" title="Edit"><i class="bi bi-pencil"></i></button>
                                                                     <button class="btn btn-sm btn-outline-danger" title="Delete"><i class="bi bi-trash"></i></button>
                                                                 </td>
                                                             </tr>
                                                             <tr>
-                                                                <td><strong>Technical Documentation</strong><br><small class="text-muted">Write specs</small></td>
-                                                                <td><div class="d-flex align-items-center"><div class="client-avatar me-2">JD</div>John Doe</div></td>
-                                                                <td><span class="badge bg-warning">Medium</span></td>
-                                                                <td>2024-07-19</td>
-                                                                <td><span class="badge badge-pending">In Progress</span></td>
-                                                                <td><div class="progress" style="height: 6px;"><div class="progress-bar" style="width: 50%"></div></div><small class="text-muted">50%</small></td>
+                                                                <td>2024-07-12</td>
+                                                                <td>Technical Documentation<br><small class="text-muted">Write specs</small></td>
+                                                                <td>4</td>
+                                                                <td><span class="badge bg-warning">WIP</span></td>
+                                                                <td><a href="https://clickup.com/task/626" target="_blank">View</a></td>
+                                                                <td>John Doe</td>
+                                                                <td>28</td>
                                                                 <td>
                                                                     <button class="btn btn-sm btn-outline-primary" title="Edit"><i class="bi bi-pencil"></i></button>
                                                                     <button class="btn btn-sm btn-outline-danger" title="Delete"><i class="bi bi-trash"></i></button>
@@ -1006,59 +1036,64 @@ include 'includes/header.php';
                                                     <table class="table table-hover data-table">
                                                         <thead>
                                                             <tr>
-                                                                <th>Task</th>
+                                                                <th>Date</th>
+                                                                <th>Task Details</th>
+                                                                <th>Hours</th>
+                                                                <th>Completed/WIP</th>
+                                                                <th>Clickup Link</th>
                                                                 <th>Assigned To</th>
-                                                                <th>Priority</th>
-                                                                <th>Due Date</th>
-                                                                <th>Status</th>
-                                                                <th>Progress</th>
+                                                                <th>Week No</th>
                                                                 <th>Actions</th>
                                                             </tr>
                                                         </thead>
                                                         <tbody>
                                                             <tr>
-                                                                <td><strong>Premium Features</strong><br><small class="text-muted">Implement VIP options</small></td>
-                                                                <td><div class="d-flex align-items-center"><div class="client-avatar me-2">SM</div>Sarah Miller</div></td>
-                                                                <td><span class="badge bg-danger">High</span></td>
                                                                 <td>2024-07-11</td>
-                                                                <td><span class="badge badge-pending">In Progress</span></td>
-                                                                <td><div class="progress" style="height: 6px;"><div class="progress-bar" style="width: 65%"></div></div><small class="text-muted">65%</small></td>
+                                                                <td>Premium Features<br><small class="text-muted">Implement VIP options</small></td>
+                                                                <td>8</td>
+                                                                <td><span class="badge bg-warning">WIP</span></td>
+                                                                <td><a href="https://clickup.com/task/723" target="_blank">View</a></td>
+                                                                <td>Sarah Miller</td>
+                                                                <td>28</td>
                                                                 <td>
                                                                     <button class="btn btn-sm btn-outline-primary" title="Edit"><i class="bi bi-pencil"></i></button>
                                                                     <button class="btn btn-sm btn-outline-danger" title="Delete"><i class="bi bi-trash"></i></button>
                                                                 </td>
                                                             </tr>
                                                             <tr>
-                                                                <td><strong>Membership System</strong><br><small class="text-muted">Create tiers</small></td>
-                                                                <td><div class="d-flex align-items-center"><div class="client-avatar me-2">JD</div>John Doe</div></td>
-                                                                <td><span class="badge bg-warning">Medium</span></td>
-                                                                <td>2024-07-17</td>
-                                                                <td><span class="badge badge-pending">Pending</span></td>
-                                                                <td><div class="progress" style="height: 6px;"><div class="progress-bar" style="width: 10%"></div></div><small class="text-muted">10%</small></td>
+                                                                <td>2024-07-12</td>
+                                                                <td>Membership System<br><small class="text-muted">Create tiers</small></td>
+                                                                <td>4</td>
+                                                                <td><span class="badge bg-success">Completed</span></td>
+                                                                <td><a href="https://clickup.com/task/724" target="_blank">View</a></td>
+                                                                <td>John Doe</td>
+                                                                <td>28</td>
                                                                 <td>
                                                                     <button class="btn btn-sm btn-outline-primary" title="Edit"><i class="bi bi-pencil"></i></button>
                                                                     <button class="btn btn-sm btn-outline-danger" title="Delete"><i class="bi bi-trash"></i></button>
                                                                 </td>
                                                             </tr>
                                                             <tr>
-                                                                <td><strong>Payment Processing</strong><br><small class="text-muted">Setup subscriptions</small></td>
-                                                                <td><div class="d-flex align-items-center"><div class="client-avatar me-2">MJ</div>Mike Johnson</div></td>
-                                                                <td><span class="badge bg-success">Low</span></td>
-                                                                <td>2024-06-28</td>
-                                                                <td><span class="badge badge-completed">Completed</span></td>
-                                                                <td><div class="progress" style="height: 6px;"><div class="progress-bar bg-success" style="width: 100%"></div></div><small class="text-muted">100%</small></td>
+                                                                <td>2024-07-13</td>
+                                                                <td>Payment Processing<br><small class="text-muted">Setup subscriptions</small></td>
+                                                                <td>3</td>
+                                                                <td><span class="badge bg-success">Completed</span></td>
+                                                                <td><a href="https://clickup.com/task/725" target="_blank">View</a></td>
+                                                                <td>Mike Johnson</td>
+                                                                <td>28</td>
                                                                 <td>
                                                                     <button class="btn btn-sm btn-outline-primary" title="Edit"><i class="bi bi-pencil"></i></button>
                                                                     <button class="btn btn-sm btn-outline-danger" title="Delete"><i class="bi bi-trash"></i></button>
                                                                 </td>
                                                             </tr>
                                                             <tr>
-                                                                <td><strong>Customer Support</strong><br><small class="text-muted">Train support team</small></td>
-                                                                <td><div class="d-flex align-items-center"><div class="client-avatar me-2">SM</div>Sarah Miller</div></td>
-                                                                <td><span class="badge bg-warning">Medium</span></td>
-                                                                <td>2024-07-23</td>
-                                                                <td><span class="badge badge-pending">In Progress</span></td>
-                                                                <td><div class="progress" style="height: 6px;"><div class="progress-bar" style="width: 30%"></div></div><small class="text-muted">30%</small></td>
+                                                                <td>2024-07-14</td>
+                                                                <td>Customer Support<br><small class="text-muted">Train support team</small></td>
+                                                                <td>5</td>
+                                                                <td><span class="badge bg-warning">WIP</span></td>
+                                                                <td><a href="https://clickup.com/task/726" target="_blank">View</a></td>
+                                                                <td>Sarah Miller</td>
+                                                                <td>28</td>
                                                                 <td>
                                                                     <button class="btn btn-sm btn-outline-primary" title="Edit"><i class="bi bi-pencil"></i></button>
                                                                     <button class="btn btn-sm btn-outline-danger" title="Delete"><i class="bi bi-trash"></i></button>
@@ -1182,26 +1217,45 @@ include 'includes/header.php';
             <div class="modal-body">
                 <form id="addTaskForm">
                     <div class="row">
-                        <div class="col-md-8">
+                        <div class="col-md-6">
                             <div class="mb-3">
-                                <label for="taskTitle" class="form-label">Task Title</label>
-                                <input type="text" class="form-control" id="taskTitle" required>
+                                <label for="taskDate" class="form-label">Date</label>
+                                <input type="date" class="form-control" id="taskDate" required>
                             </div>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <div class="mb-3">
-                                <label for="taskPriority" class="form-label">Priority</label>
-                                <select class="form-select" id="taskPriority" required>
-                                    <option value="low">Low</option>
-                                    <option value="medium" selected>Medium</option>
-                                    <option value="high">High</option>
-                                </select>
+                                <label for="taskWeekNo" class="form-label">Week No</label>
+                                <input type="number" class="form-control" id="taskWeekNo" min="1" max="53" required>
                             </div>
                         </div>
                     </div>
                     <div class="mb-3">
-                        <label for="taskDescription" class="form-label">Description</label>
-                        <textarea class="form-control" id="taskDescription" rows="3"></textarea>
+                        <label for="taskDetails" class="form-label">Task Details</label>
+                        <textarea class="form-control" id="taskDetails" rows="2" required></textarea>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                <label for="taskHours" class="form-label">Hours</label>
+                                <input type="number" class="form-control" id="taskHours" step="0.1" min="0" required>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                <label for="taskStatus" class="form-label">Completed/WIP</label>
+                                <select class="form-select" id="taskStatus" required>
+                                    <option value="wip">WIP</option>
+                                    <option value="completed">Completed</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                <label for="taskClickup" class="form-label">Clickup Link</label>
+                                <input type="url" class="form-control" id="taskClickup" placeholder="https://clickup.com/task/xyz">
+                            </div>
+                        </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
@@ -1221,45 +1275,13 @@ include 'includes/header.php';
                         </div>
                         <div class="col-md-6">
                             <div class="mb-3">
-                                <label for="taskAssignee" class="form-label">Assign To</label>
+                                <label for="taskAssignee" class="form-label">Assigned To</label>
                                 <select class="form-select" id="taskAssignee" required>
-                                    <option value="">Select Team Member</option>
+                                    <option value="">To be assigned</option>
                                     <option value="john">John Doe</option>
                                     <option value="sarah">Sarah Miller</option>
                                     <option value="mike">Mike Johnson</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label for="taskStartDate" class="form-label">Start Date</label>
-                                <input type="date" class="form-control" id="taskStartDate">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label for="taskDueDate" class="form-label">Due Date</label>
-                                <input type="date" class="form-control" id="taskDueDate" required>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label for="taskEstimatedHours" class="form-label">Estimated Hours</label>
-                                <input type="number" class="form-control" id="taskEstimatedHours" step="0.5" min="0">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label for="taskStatus" class="form-label">Status</label>
-                                <select class="form-select" id="taskStatus">
-                                    <option value="pending">Pending</option>
-                                    <option value="in-progress">In Progress</option>
-                                    <option value="completed">Completed</option>
-                                    <option value="on-hold">On Hold</option>
+                                    <!-- Add more users as needed -->
                                 </select>
                             </div>
                         </div>
