@@ -176,11 +176,17 @@ body {
 .top {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 .btn-outline-secondary {
   --bs-btn-color: #000000;
 
 }
+.btn-secondary{
+  --bs-btn-bg: #3a0ca336;
+}
+
+
 
 
 /* Badge Styles */
