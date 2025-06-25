@@ -111,6 +111,19 @@
         </li>
 
         <li class="nav-item">
+            <a class="nav-link <?= basename($_SERVER['PHP_SELF']) == 'users.php' ? 'active' : '' ?>" href="users.php">
+                <i class="bi bi-people-fill"></i> Users
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link <?= basename($_SERVER['PHP_SELF']) == 'my_profile.php' ? 'active' : '' ?>"
+                href="my_profile.php">
+                <i class="bi bi-person-circle"></i> My Profile
+            </a>
+        </li>
+
+        <li class="nav-item">
             <a class="nav-link <?= basename($_SERVER['PHP_SELF']) == 'settings.php' ? 'active' : '' ?>"
                 href="settings.php">
                 <i class="bi bi-gear"></i> Settings

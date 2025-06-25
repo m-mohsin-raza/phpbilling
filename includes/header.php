@@ -43,7 +43,7 @@
                         <span class="d-none d-md-inline">Admin</span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="profile.php"><i class="bi bi-person"></i> Profile</a></li>
+                        <li><a class="dropdown-item" href="my_profile.php"><i class="bi bi-person"></i> Profile</a></li>
                         <li><a class="dropdown-item" href="settings.php"><i class="bi bi-gear"></i> Settings</a></li>
                         <li>
                             <hr class="dropdown-divider">
