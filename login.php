@@ -1,449 +1,487 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sliding Login & Signup Form</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <style>
-        /* CSS Reset */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Montserrat', sans-serif;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
 
-        /* Body Styles */
-        body {
-            background: #f6f5f7;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            padding: 20px;
-        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        /* Container Styles */
-        .container {
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-            position: relative;
-            overflow: hidden;
-            width: 100%;
-            max-width: 100%;
-            min-height: 500px;
-            height: auto;
-        }
+    body,
+    input {
+      font-family: "Poppins", sans-serif;
+    }
 
-        /* Form Container Styles */
-        .form-container {
-            position: absolute;
-            top: 0;
-            height: 100%;
-            transition: all 0.6s ease-in-out;
-            width: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            padding: 0 40px;
-            text-align: center;
-        }
+    .container {
+      position: relative;
+      width: 100%;
+      background-color: #fff;
+      min-height: 100vh;
+      overflow: hidden;
+    }
 
-        .sign-in-container {
-            left: 0;
-            width: 50%;
-            z-index: 2;
-        }
+    .forms-container {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
 
-        .sign-up-container {
-            left: 0;
-            width: 50%;
-            opacity: 0;
-            z-index: 1;
-        }
+    .signin-signup {
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      left: 75%;
+      width: 50%;
+      transition: 1s 0.7s ease-in-out;
+      display: grid;
+      grid-template-columns: 1fr;
+      z-index: 5;
+    }
 
-        /* Form Styles */
-        form {
-            background-color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            padding: 0 40px;
-            height: 100%;
-            width: 100%;
-            text-align: center;
-        }
+    form {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 0rem 5rem;
+      transition: all 0.2s 0.7s;
+      overflow: hidden;
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+    }
 
-        h1 {
-            font-weight: bold;
-            margin: 0;
-            font-size: clamp(1.5rem, 2.5vw, 2rem);
-        }
+    form.sign-up-form {
+      opacity: 0;
+      z-index: 1;
+    }
 
-        p {
-            font-size: 14px;
-            font-weight: 100;
-            line-height: 20px;
-            letter-spacing: 0.5px;
-            margin: 15px 0;
-        }
+    form.sign-in-form {
+      z-index: 2;
+    }
 
-        span {
-            font-size: 12px;
-            margin: 10px 0;
-            display: block;
-        }
+    .title {
+      font-size: 2.2rem;
+      color: #444;
+      margin-bottom: 10px;
+    }
 
-        /* Input Styles */
-        input {
-            background-color: #eee;
-            border: none;
-            padding: 12px 15px;
-            margin: 8px 0;
-            width: 100%;
-            border-radius: 4px;
-            font-size: 14px;
-        }
+    .input-field {
+      max-width: 380px;
+      width: 100%;
+      background-color: #f0f0f0;
+      margin: 10px 0;
+      height: 55px;
+      border-radius: 55px;
+      display: grid;
+      grid-template-columns: 15% 85%;
+      padding: 0 0.4rem;
+      position: relative;
+    }
 
-        /* Button Styles */
-        button {
-            border-radius: 20px;
-            border: 1px solid #4361ee;
-            background-color: #4361ee;
-            color: #fff;
-            font-size: 12px;
-            font-weight: bold;
-            padding: 12px 45px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            margin: 10px 0;
-            cursor: pointer;
-            transition: transform 80ms ease-in;
-        }
+    .input-field i {
+      text-align: center;
+      line-height: 55px;
+      color: #acacac;
+      transition: 0.5s;
+      font-size: 1.1rem;
+    }
 
-        button:active {
-            transform: scale(0.95);
-        }
+    .input-field input {
+      background: none;
+      outline: none;
+      border: none;
+      line-height: 1;
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: #333;
+    }
 
-        button:focus {
-            outline: none;
-        }
+    .input-field input::placeholder {
+      color: #aaa;
+      font-weight: 500;
+    }
 
-        button.ghost {
-            background-color: transparent;
-            border-color: #fff;
-            color: #fff;
-        }
+    .btn {
+      width: 150px;
+      background-color: #5995fd;
+      border: none;
+      outline: none;
+      height: 49px;
+      border-radius: 49px;
+      color: #fff;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin: 10px 0;
+      cursor: pointer;
+      transition: 0.5s;
+    }
 
-        /* Social Container */
-        .social-container {
-            margin: 15px 0;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-        }
+    .btn:hover {
+      background-color: #4d84e2;
+    }
+    
+    .forgot-password {
+      margin: 10px 0;
+      text-align: center;
+    }
+    
+    .forgot-password a {
+      color: #4481eb;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.3s;
+    }
+    
+    .forgot-password a:hover {
+      color: #2a75e0;
+      text-decoration: underline;
+    }
 
-        .social-container a {
-            border: 1px solid #ddd;
-            border-radius: 50%;
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            height: 40px;
-            width: 40px;
-            color: #333;
-            text-decoration: none;
-            font-size: 14px;
-        }
+    .panels-container {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
 
-        /* Overlay Styles */
-        .overlay-container {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            width: 50%;
-            height: 100%;
-            overflow: hidden;
-            transition: transform 0.6s ease-in-out;
-            z-index: 100;
-        }
+    .container:before {
+      content: "";
+      position: absolute;
+      height: 2000px;
+      width: 2000px;
+      top: -10%;
+      right: 48%;
+      transform: translateY(-50%);
+      background-image: linear-gradient(-45deg, #4481eb 0%, #04befe 100%);
+      transition: 1.8s ease-in-out;
+      border-radius: 50%;
+      z-index: 6;
+    }
 
-        .overlay {
-            background: #3a0ca3;
-            background: linear-gradient(to right, #4361ee, #3a0ca3);
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: 0 0;
-            color: #fff;
-            position: relative;
-            left: -100%;
-            height: 100%;
-            width: 200%;
-            transform: translateX(0);
-            transition: transform 0.6s ease-in-out;
-        }
+    .image {
+      width: 100%;
+      transition: transform 1.1s ease-in-out;
+      transition-delay: 0.4s;
+    }
 
-        .overlay-panel {
-            position: absolute;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            padding: 0 40px;
-            text-align: center;
-            top: 0;
-            height: 100%;
-            width: 50%;
-            transform: translateX(0);
-            transition: transform 0.6s ease-in-out;
-        }
+    .panel {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: space-around;
+      text-align: center;
+      z-index: 6;
+    }
 
-        .overlay-left {
-            transform: translateX(-20%);
-        }
+    .left-panel {
+      pointer-events: all;
+      padding: 3rem 17% 2rem 12%;
+    }
 
-        .overlay-right {
-            right: 0;
-            transform: translateX(0);
-        }
+    .right-panel {
+      pointer-events: none;
+      padding: 3rem 12% 2rem 17%;
+    }
 
-        /* Animation Classes */
-        .container.right-panel-active .sign-in-container {
-            transform: translateX(100%);
-        }
+    .panel .content {
+      color: #fff;
+      transition: transform 0.9s ease-in-out;
+      transition-delay: 0.6s;
+    }
 
-        .container.right-panel-active .sign-up-container {
-            transform: translateX(100%);
-            opacity: 1;
-            z-index: 5;
-            animation: show 0.6s;
-        }
+    .panel h3 {
+      font-weight: 600;
+      line-height: 1;
+      font-size: 1.5rem;
+    }
 
-        .container.right-panel-active .overlay-container {
-            transform: translateX(-100%);
-        }
+    .panel p {
+      font-size: 0.95rem;
+      padding: 0.7rem 0;
+    }
 
-        .container.right-panel-active .overlay {
-            transform: translateX(50%);
-        }
+    .btn.transparent {
+      margin: 0;
+      background: none;
+      border: 2px solid #fff;
+      width: 130px;
+      height: 41px;
+      font-weight: 600;
+      font-size: 0.8rem;
+    }
 
-        .container.right-panel-active .overlay-left {
-            transform: translateX(0);
-        }
+    .right-panel .image,
+    .right-panel .content {
+      transform: translateX(800px);
+    }
 
-        .container.right-panel-active .overlay-right {
-            transform: translateX(20%);
-        }
+    /* ANIMATION */
 
-        @keyframes show {
-            0%, 49.99% {
-                opacity: 0;
-                z-index: 1;
-            }
-            50%, 100% {
-                opacity: 1;
-                z-index: 5;
-            }
-        }
+    .container.sign-up-mode:before {
+      transform: translate(100%, -50%);
+      right: 52%;
+    }
 
-        /* Link Styles */
-        a {
-            color: #333;
-            font-size: 14px;
-            text-decoration: none;
-            margin: 10px 0;
-        }
+    .container.sign-up-mode .left-panel .image,
+    .container.sign-up-mode .left-panel .content {
+      transform: translateX(-800px);
+    }
 
-        /* Responsive Styles */
-        @media (max-width: 768px) {
-            .container {
-                min-height: 700px;
-                flex-direction: column;
-            }
-            
-            .form-container {
-                width: 100%;
-                height: 50%;
-                position: absolute;
-                top: 0;
-            }
-            
-            .sign-in-container {
-                top: 0;
-                transform: translateX(0);
-            }
-            
-            .sign-up-container {
-                top: 50%;
-                transform: translateX(0);
-                opacity: 0;
-            }
-            
-            .overlay-container {
-                position: absolute;
-                top: 50%;
-                height: 50%;
-                left: 0;
-                width: 100%;
-                transform: translateY(-100%);
-            }
-            
-            .container.right-panel-active .overlay-container {
-                transform: translateY(0);
-            }
-            
-            .overlay {
-                top: -100%;
-                left: 0;
-                width: 100%;
-                height: 200%;
-                transform: translateY(0);
-            }
-            
-            .container.right-panel-active .overlay {
-                transform: translateY(50%);
-            }
-            
-            .overlay-panel {
-                top: 20%;
-                height: 60%;
-                width: 100%;
-                padding: 0 20px;
-            }
-            
-            .container.right-panel-active .sign-in-container {
-                transform: translateY(-100%);
-            }
-            
-            .container.right-panel-active .sign-up-container {
-                transform: translateY(-100%);
-                opacity: 1;
-                z-index: 5;
-            }
-            
-            form {
-                padding: 0 20px;
-            }
-            
-            h1 {
-                font-size: 1.5rem;
-            }
-            
-            button {
-                padding: 10px 35px;
-            }
-        }
+    .container.sign-up-mode .signin-signup {
+      left: 25%;
+    }
 
-        @media (max-width: 480px) {
-            .container {
-                min-height: 600px;
-            }
-            
-            .overlay-panel {
-                top: 15%;
-                height: 70%;
-            }
-            
-            .social-container a {
-                height: 35px;
-                width: 35px;
-            }
-            
-            input {
-                padding: 10px 12px;
-            }
-        }
-    </style>
+    .container.sign-up-mode form.sign-up-form {
+      opacity: 1;
+      z-index: 2;
+    }
+
+    .container.sign-up-mode form.sign-in-form {
+      opacity: 0;
+      z-index: 1;
+    }
+
+    .container.sign-up-mode .right-panel .image,
+    .container.sign-up-mode .right-panel .content {
+      transform: translateX(0%);
+    }
+
+    .container.sign-up-mode .left-panel {
+      pointer-events: none;
+    }
+
+    .container.sign-up-mode .right-panel {
+      pointer-events: all;
+    }
+
+    @media (max-width: 870px) {
+      .container {
+        min-height: 800px;
+        height: 100vh;
+      }
+
+      .signin-signup {
+        width: 100%;
+        top: 95%;
+        transform: translate(-50%, -100%);
+        transition: 1s 0.8s ease-in-out;
+      }
+
+      .signin-signup,
+      .container.sign-up-mode .signin-signup {
+        left: 50%;
+      }
+
+      .panels-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 2fr 1fr;
+      }
+
+      .panel {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        padding: 2.5rem 8%;
+        grid-column: 1 / 2;
+      }
+
+      .right-panel {
+        grid-row: 3 / 4;
+      }
+
+      .left-panel {
+        grid-row: 1 / 2;
+      }
+
+      .image {
+        width: 200px;
+        transition: transform 0.9s ease-in-out;
+        transition-delay: 0.6s;
+      }
+
+      .panel .content {
+        padding-right: 15%;
+        transition: transform 0.9s ease-in-out;
+        transition-delay: 0.8s;
+      }
+
+      .panel h3 {
+        font-size: 1.2rem;
+      }
+
+      .panel p {
+        font-size: 0.7rem;
+        padding: 0.5rem 0;
+      }
+
+      .btn.transparent {
+        width: 110px;
+        height: 35px;
+        font-size: 0.7rem;
+      }
+
+      .container:before {
+        width: 1500px;
+        height: 1500px;
+        transform: translateX(-50%);
+        left: 30%;
+        bottom: 68%;
+        right: initial;
+        top: initial;
+        transition: 2s ease-in-out;
+      }
+
+      .container.sign-up-mode:before {
+        transform: translate(-50%, 100%);
+        bottom: 32%;
+        right: initial;
+      }
+
+      .container.sign-up-mode .left-panel .image,
+      .container.sign-up-mode .left-panel .content {
+        transform: translateY(-300px);
+      }
+
+      .container.sign-up-mode .right-panel .image,
+      .container.sign-up-mode .right-panel .content {
+        transform: translateY(0px);
+      }
+
+      .right-panel .image,
+      .right-panel .content {
+        transform: translateY(300px);
+      }
+
+      .container.sign-up-mode .signin-signup {
+        top: 5%;
+        transform: translate(-50%, 0);
+      }
+    }
+
+    @media (max-width: 570px) {
+      form {
+        padding: 0 1.5rem;
+      }
+
+      .image {
+        display: none;
+      }
+
+      .panel .content {
+        padding: 0.5rem 1rem;
+      }
+
+      .container {
+        padding: 1.5rem;
+      }
+
+      .container:before {
+        bottom: 72%;
+        left: 50%;
+      }
+
+      .container.sign-up-mode:before {
+        bottom: 28%;
+        left: 50%;
+      }
+    }
+  </style>
+  <title>Sign in & Sign up Form</title>
 </head>
+
 <body>
-    <div class="container" id="container">
-        <div class="form-container sign-up-container">
-            <form>
-                <h1>Create Account</h1>
-                <div class="social-container">
-                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-                <span>or use your email for registration</span>
-                <input type="text" placeholder="Name" />
-                <input type="email" placeholder="Email" />
-                <input type="password" placeholder="Password" />
-                <button>Sign Up</button>
-            </form>
-        </div>
-        <div class="form-container sign-in-container">
-            <form>
-                <h1>Sign in</h1>
-                <div class="social-container">
-                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-                <span>or use your account</span>
-                <input type="email" placeholder="Email" />
-                <input type="password" placeholder="Password" />
-                <a href="#">Forgot your password?</a>
-                <button>Sign In</button>
-            </form>
-        </div>
-        <div class="overlay-container">
-            <div class="overlay">
-                <div class="overlay-panel overlay-left">
-                    <h1>Welcome Back!</h1>
-                    <p>To keep connected with us please login with your personal info</p>
-                    <button class="ghost" id="signIn">Sign In</button>
-                </div>
-                <div class="overlay-panel overlay-right">
-                    <h1>Hello, Friend!</h1>
-                    <p>Enter your personal details and start journey with us</p>
-                    <button class="ghost" id="signUp">Sign Up</button>
-                </div>
-            </div>
-        </div>
+  <div class="container">
+    <div class="forms-container">
+      <div class="signin-signup">
+        <form action="#" class="sign-in-form">
+          <h2 class="title">Sign in</h2>
+          <div class="input-field">
+            <i class="fas fa-user"></i>
+            <input type="text" placeholder="Username" />
+          </div>
+          <div class="input-field">
+            <i class="fas fa-lock"></i>
+            <input type="password" placeholder="Password" />
+          </div>
+          <input type="submit" value="Login" class="btn solid" />
+          <p class="forgot-password">
+            <a href="forgot_1.php">Forgot Password?</a>
+          </p>
+        </form>
+        <form action="#" class="sign-up-form">
+          <h2 class="title">Sign up</h2>
+          <div class="input-field">
+            <i class="fas fa-user"></i>
+            <input type="text" placeholder="Username" />
+          </div>
+          <div class="input-field">
+            <i class="fas fa-envelope"></i>
+            <input type="email" placeholder="Email" />
+          </div>
+          <div class="input-field">
+            <i class="fas fa-lock"></i>
+            <input type="password" placeholder="Password" />
+          </div>
+          <input type="submit" class="btn" value="Sign up" />
+        </form>
+      </div>
     </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const signUpButton = document.getElementById('signUp');
-            const signInButton = document.getElementById('signIn');
-            const container = document.getElementById('container');
+    <div class="panels-container">
+      <div class="panel left-panel">
+        <div class="content">
+          <h3>New here ?</h3>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis,
+            ex ratione. Aliquid!
+          </p>
+          <button class="btn transparent" id="sign-up-btn">
+            Sign up
+          </button>
+        </div>
+        <img src="assets/images/log.svg" class="image" alt="" />
+      </div>
+      <div class="panel right-panel">
+        <div class="content">
+          <h3>One of us ?</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
+            laboriosam ad deleniti.
+          </p>
+          <button class="btn transparent" id="sign-in-btn">
+            Sign in
+          </button>
+        </div>
+        <img src="assets/images/register.svg" class="image" alt="" />
+      </div>
+    </div>
+  </div>
 
-            // Set initial state for mobile
-            function checkMobile() {
-                if (window.innerWidth <= 768) {
-                    container.classList.remove("right-panel-active");
-                }
-            }
+  <script>
+    const sign_in_btn = document.querySelector("#sign-in-btn");
+    const sign_up_btn = document.querySelector("#sign-up-btn");
+    const container = document.querySelector(".container");
 
-            // Check on load
-            checkMobile();
-            
-            // Check on resize
-            window.addEventListener('resize', checkMobile);
+    sign_up_btn.addEventListener("click", () => {
+      container.classList.add("sign-up-mode");
+    });
 
-            signUpButton.addEventListener('click', () => {
-                container.classList.add("right-panel-active");
-            });
-
-            signInButton.addEventListener('click', () => {
-                container.classList.remove("right-panel-active");
-            });
-
-            // Form submission handlers (demo only)
-            document.querySelectorAll('form').forEach(form => {
-                form.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    const formType = this.querySelector('h1').textContent.toLowerCase();
-                    alert(`${formType} form submitted (demo only)`);
-                });
-            });
-        });
-    </script>
+    sign_in_btn.addEventListener("click", () => {
+      container.classList.remove("sign-up-mode");
+    });
+  </script>
 </body>
+
 </html>
