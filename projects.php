@@ -11,16 +11,16 @@ include 'includes/header.php';
         <div class="row mb-4">
             <div class="col-12">
                 <h2>Projects</h2>
-                <p class="text-muted">Manage your projects and track progress.</p>
+                <p class="text-muted">Manage your projects and billing cycles.</p>
             </div>
         </div>
 
-        <!-- Project Stats -->
+        <!-- Project Stats (Kept same as per your request) -->
         <div class="row mb-4">
             <div class="col-md-3">
                 <div class="card">
                     <div class="card-body text-center">
-                        <h3 class="text-primary">24</h3>
+                        <h3 class="text-primary">7</h3>
                         <p class="text-muted mb-0">Total Projects</p>
                     </div>
                 </div>
@@ -28,24 +28,24 @@ include 'includes/header.php';
             <div class="col-md-3">
                 <div class="card">
                     <div class="card-body text-center">
-                        <h3 class="text-warning">8</h3>
-                        <p class="text-muted mb-0">In Progress</p>
+                        <h3 class="text-warning">5</h3>
+                        <p class="text-muted mb-0">Active</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="card">
                     <div class="card-body text-center">
-                        <h3 class="text-success">14</h3>
-                        <p class="text-muted mb-0">Completed</p>
+                        <h3 class="text-success">4</h3>
+                        <p class="text-muted mb-0">Recurring</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="card">
                     <div class="card-body text-center">
-                        <h3 class="text-danger">2</h3>
-                        <p class="text-muted mb-0">On Hold</p>
+                        <h3 class="text-danger">3</h3>
+                        <p class="text-muted mb-0">Hourly</p>
                     </div>
                 </div>
             </div>
@@ -67,11 +67,12 @@ include 'includes/header.php';
                                 <thead>
                                     <tr>
                                         <th>Project</th>
-                                        <th>Client</th>
-                                        <th>Start Date</th>
-                                        <th>Due Date</th>
-                                        <th>Budget</th>
-                                        <th>Progress</th>
+                                        <th>From Company</th>
+                                        <th>To Client</th>
+                                        <th>Billing Type</th>
+                                        <th>Rate</th>
+                                        <th>Payment Cycle</th>
+                                        <th>Invoice Cycle</th> <!-- Added -->
                                         <th>Status</th>
                                         <th>Actions</th>
                                     </tr>
@@ -81,31 +82,23 @@ include 'includes/header.php';
                                         <td>
                                             <div class="d-flex align-items-center">
                                                 <div class="project-icon me-3">
-                                                    <i class="bi bi-globe"></i>
+                                                    <i class="bi bi-briefcase"></i>
                                                 </div>
                                                 <div>
-                                                    <strong>Website Redesign</strong>
-                                                    <br><small class="text-muted">Complete website overhaul</small>
+                                                    <strong>SF 1</strong>
                                                 </div>
                                             </div>
                                         </td>
-                                        <td>Mansoor LLC</td>
-                                        <td>2024-06-01</td>
-                                        <td>2024-07-15</td>
-                                        <td class="amount-cell">$25,000.00</td>
-                                        <td>
-                                            <div class="progress mb-1" style="height: 6px;">
-                                                <div class="progress-bar" style="width: 75%"></div>
-                                            </div>
-                                            <small class="text-muted">75%</small>
-                                        </td>
-                                        <td><span class="badge badge-pending">In Progress</span></td>
+                                        <td>Acme Corp</td>
+                                        <td>Client Alpha</td>
+                                        <td><span class="badge bg-success">Recurring</span></td>
+                                        <td>$2,500.00</td>
+                                        <td>Weekly</td>
+                                        <td>9th to 25th</td> <!-- Example Invoice Cycle -->
+                                        <td><span class="badge bg-primary">Active</span></td>
                                         <td>
                                             <button class="btn btn-sm btn-outline-primary" title="Edit">
                                                 <i class="bi bi-pencil"></i>
-                                            </button>
-                                            <button class="btn btn-sm btn-outline-info" title="View">
-                                                <i class="bi bi-eye"></i>
                                             </button>
                                             <button class="btn btn-sm btn-outline-danger" title="Delete">
                                                 <i class="bi bi-trash"></i>
@@ -116,31 +109,23 @@ include 'includes/header.php';
                                         <td>
                                             <div class="d-flex align-items-center">
                                                 <div class="project-icon me-3">
-                                                    <i class="bi bi-phone"></i>
+                                                    <i class="bi bi-briefcase"></i>
                                                 </div>
                                                 <div>
-                                                    <strong>Mobile App Development</strong>
-                                                    <br><small class="text-muted">iOS and Android app</small>
+                                                    <strong>SF 2</strong>
                                                 </div>
                                             </div>
                                         </td>
-                                        <td>Tech Solutions Inc</td>
-                                        <td>2024-05-15</td>
-                                        <td>2024-08-30</td>
-                                        <td class="amount-cell">$45,000.00</td>
-                                        <td>
-                                            <div class="progress mb-1" style="height: 6px;">
-                                                <div class="progress-bar bg-warning" style="width: 45%"></div>
-                                            </div>
-                                            <small class="text-muted">45%</small>
-                                        </td>
-                                        <td><span class="badge badge-pending">In Progress</span></td>
+                                        <td>Beta Solutions</td>
+                                        <td>Client Bravo</td>
+                                        <td><span class="badge bg-danger">Hourly</span></td>
+                                        <td>$50.00/hr</td>
+                                        <td>15 days</td>
+                                        <td>9th to 25th</td> <!-- Example Invoice Cycle -->
+                                        <td><span class="badge bg-primary">Active</span></td>
                                         <td>
                                             <button class="btn btn-sm btn-outline-primary" title="Edit">
                                                 <i class="bi bi-pencil"></i>
-                                            </button>
-                                            <button class="btn btn-sm btn-outline-info" title="View">
-                                                <i class="bi bi-eye"></i>
                                             </button>
                                             <button class="btn btn-sm btn-outline-danger" title="Delete">
                                                 <i class="bi bi-trash"></i>
@@ -151,31 +136,131 @@ include 'includes/header.php';
                                         <td>
                                             <div class="d-flex align-items-center">
                                                 <div class="project-icon me-3">
-                                                    <i class="bi bi-database"></i>
+                                                    <i class="bi bi-briefcase"></i>
                                                 </div>
                                                 <div>
-                                                    <strong>Database Migration</strong>
-                                                    <br><small class="text-muted">Legacy system upgrade</small>
+                                                    <strong>SF 3</strong>
                                                 </div>
                                             </div>
                                         </td>
-                                        <td>Digital Marketing Pro</td>
-                                        <td>2024-04-01</td>
-                                        <td>2024-06-30</td>
-                                        <td class="amount-cell">$15,000.00</td>
-                                        <td>
-                                            <div class="progress mb-1" style="height: 6px;">
-                                                <div class="progress-bar bg-success" style="width: 100%"></div>
-                                            </div>
-                                            <small class="text-muted">100%</small>
-                                        </td>
-                                        <td><span class="badge badge-completed">Completed</span></td>
+                                        <td>Gamma LLC</td>
+                                        <td>Client Charlie</td>
+                                        <td><span class="badge bg-success">Recurring</span></td>
+                                        <td>$2,000.00</td>
+                                        <td>Monthly</td>
+                                        <td>26th to 10th</td> <!-- Example Invoice Cycle -->
+                                        <td><span class="badge bg-primary">Active</span></td>
                                         <td>
                                             <button class="btn btn-sm btn-outline-primary" title="Edit">
                                                 <i class="bi bi-pencil"></i>
                                             </button>
-                                            <button class="btn btn-sm btn-outline-info" title="View">
-                                                <i class="bi bi-eye"></i>
+                                            <button class="btn btn-sm btn-outline-danger" title="Delete">
+                                                <i class="bi bi-trash"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <div class="project-icon me-3">
+                                                    <i class="bi bi-briefcase"></i>
+                                                </div>
+                                                <div>
+                                                    <strong>DAL</strong>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>Delta Inc</td>
+                                        <td>Client Delta</td>
+                                        <td><span class="badge bg-success">Recurring</span></td>
+                                        <td>$1,800.00</td>
+                                        <td>Weekly</td>
+                                        <td>9th to 25th</td> <!-- Example Invoice Cycle -->
+                                        <td><span class="badge bg-primary">Active</span></td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-primary" title="Edit">
+                                                <i class="bi bi-pencil"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-outline-danger" title="Delete">
+                                                <i class="bi bi-trash"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <div class="project-icon me-3">
+                                                    <i class="bi bi-briefcase"></i>
+                                                </div>
+                                                <div>
+                                                    <strong>CRAFT</strong>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>CraftWorks</td>
+                                        <td>Client Echo</td>
+                                        <td><span class="badge bg-danger">Hourly</span></td>
+                                        <td>$60.00/hr</td>
+                                        <td>15 days</td>
+                                        <td>9th to 25th</td> <!-- Example Invoice Cycle -->
+                                        <td><span class="badge bg-primary">Active</span></td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-primary" title="Edit">
+                                                <i class="bi bi-pencil"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-outline-danger" title="Delete">
+                                                <i class="bi bi-trash"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <div class="project-icon me-3">
+                                                    <i class="bi bi-briefcase"></i>
+                                                </div>
+                                                <div>
+                                                    <strong>DRD</strong>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>DRD Group</td>
+                                        <td>Client Foxtrot</td>
+                                        <td><span class="badge bg-success">Recurring</span></td>
+                                        <td>$1,200.00</td>
+                                        <td>Monthly</td>
+                                        <td>26th to 10th</td> <!-- Example Invoice Cycle -->
+                                        <td><span class="badge bg-primary">Active</span></td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-primary" title="Edit">
+                                                <i class="bi bi-pencil"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-outline-danger" title="Delete">
+                                                <i class="bi bi-trash"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <div class="project-icon me-3">
+                                                    <i class="bi bi-briefcase"></i>
+                                                </div>
+                                                <div>
+                                                    <strong>PLATINUM</strong>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>Platinum Partners</td>
+                                        <td>Client Golf</td>
+                                        <td><span class="badge bg-danger">Hourly</span></td>
+                                        <td>$75.00/hr</td>
+                                        <td>Weekly</td>
+                                        <td>9th to 25th</td> <!-- Example Invoice Cycle -->
+                                        <td><span class="badge bg-primary">Active</span></td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-primary" title="Edit">
+                                                <i class="bi bi-pencil"></i>
                                             </button>
                                             <button class="btn btn-sm btn-outline-danger" title="Delete">
                                                 <i class="bi bi-trash"></i>
@@ -206,52 +291,73 @@ include 'includes/header.php';
                         <label for="projectName" class="form-label">Project Name</label>
                         <input type="text" class="form-control" id="projectName" required>
                     </div>
-                    <div class="mb-3">
-                        <label for="projectDescription" class="form-label">Description</label>
-                        <textarea class="form-control" id="projectDescription" rows="3"></textarea>
-                    </div>
+
                     <div class="row">
                         <div class="col-md-6">
                             <div class="mb-3">
-                                <label for="projectClient" class="form-label">Client</label>
-                                <select class="form-select" id="projectClient" required>
-                                    <option value="">Select Client</option>
-                                    <option value="client1">Mansoor LLC</option>
-                                    <option value="client2">Tech Solutions Inc</option>
-                                    <option value="client3">Digital Marketing Pro</option>
-                                </select>
+                                <label for="fromCompany" class="form-label">From Company</label>
+                                <input type="text" class="form-control" id="fromCompany" value="Your Company" required>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="mb-3">
-                                <label for="projectBudget" class="form-label">Budget</label>
-                                <input type="number" class="form-control" id="projectBudget" step="0.01" min="0">
+                                <label for="toClient" class="form-label">To Client</label>
+                                <input type="text" class="form-control" id="toClient" required>
                             </div>
                         </div>
                     </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Billing Type</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="billingType" id="recurring"
+                                value="recurring" checked>
+                            <label class="form-check-label" for="recurring">
+                                Recurring
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="billingType" id="hourly" value="hourly">
+                            <label class="form-check-label" for="hourly">
+                                Hourly
+                            </label>
+                        </div>
+                    </div>
+
                     <div class="row">
                         <div class="col-md-6">
-                            <div class="mb-3">
-                                <label for="projectStartDate" class="form-label">Start Date</label>
-                                <input type="date" class="form-control" id="projectStartDate" required>
+                            <div class="mb-3" id="recurringRateField">
+                                <label for="recurringRate" class="form-label">Recurring Rate ($)</label>
+                                <input type="number" class="form-control" id="recurringRate" step="0.01" min="0">
+                            </div>
+                            <div class="mb-3 d-none" id="hourlyRateField">
+                                <label for="hourlyRate" class="form-label">Hourly Rate ($/hr)</label>
+                                <input type="number" class="form-control" id="hourlyRate" step="0.01" min="0">
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label for="projectDueDate" class="form-label">Due Date</label>
-                                <input type="date" class="form-control" id="projectDueDate" required>
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="paymentCycle" class="form-label">Payment Cycle</label>
+                                    <select class="form-select" id="paymentCycle" required>
+                                        <option value="">Select Cycle</option>
+                                        <option value="weekly">Weekly</option>
+                                        <option value="15-days">15 days</option>
+                                        <option value="monthly">Monthly</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="invoiceCycle" class="form-label">Invoice Cycle</label>
+                                    <select class="form-select" id="invoiceCycle" required>
+                                        <option value="">Select Invoice Cycle</option>
+                                        <option value="15 days">15 days</option>
+                                        <option value="9th to 25th">9th to 25th</option>
+                                        <option value="26th to 10th">26th to 10th</option>
+                                    </select>
+
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="mb-3">
-                        <label for="projectStatus" class="form-label">Status</label>
-                        <select class="form-select" id="projectStatus">
-                            <option value="pending">Pending</option>
-                            <option value="in-progress">In Progress</option>
-                            <option value="completed">Completed</option>
-                            <option value="on-hold">On Hold</option>
-                            <option value="cancelled">Cancelled</option>
-                        </select>
                     </div>
                 </form>
             </div>
@@ -262,5 +368,31 @@ include 'includes/header.php';
         </div>
     </div>
 </div>
+
+<script>
+    // Show/hide rate fields based on billing type selection
+    document.addEventListener('DOMContentLoaded', function () {
+        const recurringRadio = document.getElementById('recurring');
+        const hourlyRadio = document.getElementById('hourly');
+        const recurringRateField = document.getElementById('recurringRateField');
+        const hourlyRateField = document.getElementById('hourlyRateField');
+
+        function toggleRateFields() {
+            if (recurringRadio.checked) {
+                recurringRateField.classList.remove('d-none');
+                hourlyRateField.classList.add('d-none');
+            } else {
+                recurringRateField.classList.add('d-none');
+                hourlyRateField.classList.remove('d-none');
+            }
+        }
+
+        recurringRadio.addEventListener('change', toggleRateFields);
+        hourlyRadio.addEventListener('change', toggleRateFields);
+
+        // Initialize on page load
+        toggleRateFields();
+    });
+</script>
 
 <?php include 'includes/footer.php'; ?>
